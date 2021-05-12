@@ -1,5 +1,6 @@
 """module permettant de créer à partir d'un texte un fichier audio (text to speech) """
 import requests
+import time
 import argparse
 import logging
 import json
@@ -82,6 +83,8 @@ if __name__ == '__main__':
 
   # création du nouveau clip
   clip_id = create_new_clip(args.titre, args.texte, args.voice_uuid)
+
+  time.sleep(10)
 
   # récupération de l'url du clip
   clip_link = get_url_clip(clip_id, args.project_name)
